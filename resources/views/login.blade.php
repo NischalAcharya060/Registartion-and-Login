@@ -24,7 +24,7 @@
               @csrf
               <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="enter your email" required>
+                <input type="email" value="{{old('email')}}" name="email" class="form-control" id="email" placeholder="enter your email" required>
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
