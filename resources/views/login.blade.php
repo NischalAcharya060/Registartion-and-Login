@@ -45,9 +45,6 @@
             <div class="text-center">
               <p>Don't have an account? <a href="{{ route('register') }}" style="text-decoration: none">Register here</a></p>
             </div>
-            <div class="text-center">
-            <a  style="text-decoration: none">Forget Password?</a></p>
-            </div>
           </div>
         </div>
       </div>
