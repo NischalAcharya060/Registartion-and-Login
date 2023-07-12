@@ -22,6 +22,13 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
 
+        // Assign the role based on your logic
+        if ($request->email === 'admin@admin.com') {
+            $user->role = 'admin'; // Assign 'admin' role to the user with specific email
+        } else {
+            $user->role = 'user'; // Default role is 'user' for other users
+        }
+
         $user->save();
 
         return back()->with('success', 'Registered successfully');
@@ -40,7 +47,12 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return redirect('/home')->with('success', 'Login success');
+            $user = Auth::user();
+            if ($user->role === 'admin') {
+                return redirect('/dashboard')->with('success', 'Login success');
+            } else {
+                return redirect('/home')->with('success', 'Login success');
+            }
         }
 
         return back()->with('error', 'Invalid email or password');
