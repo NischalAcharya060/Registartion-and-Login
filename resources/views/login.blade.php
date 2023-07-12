@@ -6,6 +6,7 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body style="background-image: url('https://img.freepik.com/premium-vector/network-connection-background-abstract-style_23-2148875738.jpg'); background-size: cover;">
     <div class="row justify-content-center mt-5">
@@ -28,7 +29,12 @@
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" placeholder="enter your password" class="form-control" id="password" required>
+                <div class="input-group">
+                  <input type="password" name="password" class="form-control" placeholder="enter your password" id="password" required>
+                  <button type="button" id="togglePassword" class="btn btn-outline-secondary" onclick="togglePasswordVisibility()">
+                    <span class="material-icons-outlined">Show_Password</span>
+                  </button>
+                </div>
               </div>
               <div class="mb-3">
                 <div class="form-check">
@@ -49,5 +55,19 @@
         </div>
       </div>
     </div>
+    <script>
+      function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password");
+        var toggleButton = document.getElementById("togglePassword");
+        
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          toggleButton.innerHTML = '<span class="material-icons-outlined">Hide_Password</span>';
+        } else {
+          passwordField.type = "password";
+          toggleButton.innerHTML = '<span class="material-icons-outlined">Show_Password</span>';
+        }
+      }
+    </script>
   </body>
 </html>
