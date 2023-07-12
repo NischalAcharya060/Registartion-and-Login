@@ -31,6 +31,12 @@
                 <input type="password" name="password" placeholder="enter your password" class="form-control" id="password" required>
               </div>
               <div class="mb-3">
+                <div class="form-check">
+                  <input type="checkbox" name="remember" class="form-check-input" id="remember">
+                  <label class="form-check-label" for="remember">Remember Me</label>
+                </div>
+              </div>
+              <div class="mb-3">
                 <div class="d-grid">
                   <button class="btn btn-primary">Login</button>
                 </div>
@@ -38,6 +44,9 @@
             </form>
             <div class="text-center">
               <p>Don't have an account? <a href="{{ route('register') }}" style="text-decoration: none">Register here</a></p>
+            </div>
+            <div class="text-center">
+            <a  style="text-decoration: none">Forget Password?</a></p>
             </div>
           </div>
         </div>

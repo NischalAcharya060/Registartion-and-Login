@@ -46,17 +46,19 @@ class AuthController extends Controller
             'password' => $request->password,
         ];
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            if ($user->role === 'admin') {
-                return redirect('/dashboard')->with('success', 'Login success');
-            } else {
-                return redirect('/home')->with('success', 'Login success');
-            }
-        }
+        $remember = $request->has('remember'); // Check if the "Remember Me" checkbox is checked
 
-        return back()->with('error', 'Invalid email or password');
+    if (Auth::attempt($credentials, $remember)) {
+        $user = Auth::user();
+        if ($user->role === 'admin') {
+            return redirect('/dashboard')->with('success', 'Login success');
+        } else {
+            return redirect('/home')->with('success', 'Login success');
+        }
     }
+
+    return back()->with('error', 'Invalid email or password');
+}
 
     public function logout()
     {
