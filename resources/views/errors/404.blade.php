@@ -15,7 +15,7 @@
           href="https://fonts.googleapis.com/css?family=Arvo"
         />
         <style>
-            
+
       body {
         margin: 0;
         padding: 0;
@@ -108,7 +108,7 @@
         color: #000;
       }
             </style>
-        
+
       </head>
       <body>
         <section class="page_404">
@@ -119,15 +119,15 @@
                   <div class="four_zero_four_bg">
                     <h1 class="text-center">404</h1>
                   </div>
-    
+
                   <div class="contant_box_404">
                     <h3 class="h2">Oops! Looks like you're lost</h3>
-    
+
                     <p>
                       The page you are looking for is not available.Please feel free
                       to contact Nischal Acharya for better answer..
                     </p>
-    
+
                     <button class="link_404" onclick="goBack()">Go Back</button>
                   </div>
                 </div>
@@ -146,6 +146,6 @@
             }
         </script>
         </footer>
-      
+
       </body>
-</head>    
+</html>
